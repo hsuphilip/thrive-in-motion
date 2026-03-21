@@ -4,136 +4,422 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thrive in Motion | Physical Therapy in San Jose</title>
-    <meta name="description" content="Thrive in Motion - Get Back to What You Love. Physical therapy services in San Jose, CA. By appointment only.">
+    <meta name="description" content="Thrive in Motion - Physical therapy that works for you. Get a clear diagnosis, an actionable recovery plan, and your life back. San Jose, CA.">
+    <link rel="icon" href="philip-hsu-icon-only.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        * {
+        /* ===========================
+           RESET & BASE
+        =========================== */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            min-height: 100vh;
-            color: #1e293b;
+            font-family: 'Work Sans', -apple-system, sans-serif;
+            background: #f9f9f9;
+            color: #1a1c1c;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 600px;
+        h1, h2, h3, h4 {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        /* ===========================
+           UTILITIES
+        =========================== */
+        .kicker {
+            display: inline-block;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #4A90D9;
+            margin-bottom: 16px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            font-family: 'Lexend', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: white;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #2B6CB0 0%, #4A90D9 100%);
+            box-shadow: 0 10px 40px rgba(0, 27, 60, 0.12);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 48px rgba(0, 27, 60, 0.18);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            font-family: 'Lexend', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1a1c1c;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            background: #eeeeee;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: #e2e2e2;
+            transform: translateY(-2px);
+        }
+
+        /* ===========================
+           NAVIGATION
+        =========================== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(0, 27, 60, 0.08);
+        }
+
+        .nav-inner {
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
         }
 
-        /* Header / Logo Section */
-        .header {
-            text-align: center;
+        .nav-logo {
+            height: 52px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .nav-links a {
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #414752;
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #4A90D9;
+        }
+
+        .nav-book {
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: white !important;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #2B6CB0 0%, #4A90D9 100%);
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .nav-book:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* ===========================
+           MAIN
+        =========================== */
+        main {
+            padding-top: 72px;
+        }
+
+        /* ===========================
+           HERO
+        =========================== */
+        .hero {
+            background: #ffffff;
+            padding: 80px 32px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-blob {
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 500px;
+            height: 500px;
+            opacity: 0.06;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 64px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-kicker {
+            display: inline-block;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #4A90D9;
+            background: #EBF4FF;
+            padding: 6px 14px;
+            border-radius: 999px;
+            margin-bottom: 24px;
+        }
+
+        .hero-headline {
+            font-size: 3.75rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: #1a1c1c;
+            margin-bottom: 24px;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            color: #414752;
+            line-height: 1.7;
+            max-width: 480px;
             margin-bottom: 40px;
         }
 
-        .logo {
-            max-width: 400px;
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-img {
             width: 100%;
-            height: auto;
-            margin-bottom: 16px;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 16px;
+            display: block;
+            box-shadow: 0 10px 40px rgba(0, 27, 60, 0.10);
         }
 
-        .tagline {
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: #4A90D9;
-            letter-spacing: -0.01em;
+        /* ===========================
+           BENEFITS
+        =========================== */
+        .benefits {
+            background: #f3f3f4;
+            padding: 96px 32px;
         }
 
-        /* About Section */
-        .about-card {
+        .benefits-header {
+            max-width: 1100px;
+            margin: 0 auto 56px;
+        }
+
+        .benefits-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #1a1c1c;
+            line-height: 1.2;
+            max-width: 560px;
+        }
+
+        .benefits-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .benefit-card {
             background: white;
             border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            padding: 40px 36px;
+            box-shadow: 0 10px 40px rgba(0, 27, 60, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 27, 60, 0.10);
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 24px;
-            text-align: center;
         }
 
-        .headshot {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 4px solid #7DD3EA;
-        }
+        .benefit-icon-blue { background: #dbeafe; }
+        .benefit-icon-teal { background: #dbeafe; }
+        .benefit-icon-cyan { background: #e0f7ff; }
 
-        .about-name {
-            font-size: 1.5rem;
+        .benefit-card h3 {
+            font-size: 1.15rem;
             font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 4px;
+            color: #1a1c1c;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
         }
 
-        .about-title {
-            font-size: 1rem;
-            font-weight: 500;
-            color: #4A90D9;
-            margin-bottom: 16px;
+        .benefit-card p {
+            font-size: 0.95rem;
+            color: #414752;
+            line-height: 1.7;
+        }
+
+        /* ===========================
+           ABOUT
+        =========================== */
+        .about {
+            background: white;
+            padding: 96px 32px;
+        }
+
+        .about-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image-wrap {
+            position: relative;
+        }
+
+        .about-image-wrap::before {
+            content: '';
+            position: absolute;
+            top: -24px;
+            left: -24px;
+            right: 24px;
+            bottom: 24px;
+            background: #EBF4FF;
+            border-radius: 16px;
+            z-index: 0;
+        }
+
+        .about-img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 16px;
+            display: block;
+            box-shadow: 0 10px 40px rgba(0, 27, 60, 0.10);
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #1a1c1c;
+            line-height: 1.2;
+            margin-bottom: 20px;
         }
 
         .about-bio {
             font-size: 1rem;
-            color: #475569;
-            line-height: 1.7;
-            margin-bottom: 24px;
+            color: #414752;
+            line-height: 1.8;
+            margin-bottom: 32px;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: #0D9488;
-            color: white;
-            padding: 14px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: background 0.2s ease;
-            cursor: pointer;
-            border: none;
-            position: relative;
+        .checklist {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 36px;
         }
 
-        .cta-button:hover {
-            background: #4A90D9;
+        .checklist li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.975rem;
+            font-weight: 500;
+            color: #1a1c1c;
         }
 
+        .checklist-icon {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            color: #4A90D9;
+        }
+
+        /* Dropdown */
         .cta-dropdown {
             display: none;
             position: absolute;
-            bottom: calc(100% + 10px);
+            top: calc(100% + 10px);
             left: 50%;
             transform: translateX(-50%);
             background: white;
             border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 24px rgba(0, 27, 60, 0.15);
             padding: 8px;
             min-width: 200px;
             z-index: 10;
         }
 
-        .cta-dropdown.show {
-            display: block;
-        }
+        .cta-dropdown.show { display: block; }
 
         .cta-dropdown::after {
             content: '';
             position: absolute;
-            top: 100%;
+            bottom: 100%;
             left: 50%;
             transform: translateX(-50%);
             border: 8px solid transparent;
-            border-top-color: white;
+            border-bottom-color: white;
         }
 
         .cta-option {
@@ -143,182 +429,260 @@
             padding: 12px 16px;
             border-radius: 8px;
             text-decoration: none;
-            color: #1e293b;
+            color: #1a1c1c;
             font-size: 0.95rem;
             font-weight: 500;
             transition: background 0.15s ease;
         }
 
-        .cta-option:hover {
-            background: #f0fdfa;
+        .cta-option:hover { background: #EBF4FF; }
+
+        /* ===========================
+           SERVICES
+        =========================== */
+        .services {
+            background: #f3f3f4;
+            padding: 96px 32px;
         }
 
-        .cta-option svg {
-            width: 20px;
-            height: 20px;
-            color: #0D9488;
-            flex-shrink: 0;
+        .services-header {
+            max-width: 1100px;
+            margin: 0 auto 56px;
         }
 
-        .session-highlight {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #0D9488;
-            margin-bottom: 24px;
+        .services-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #1a1c1c;
         }
 
-        /* Calendly Section */
-        .calendly-card {
+        .services-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
             background: white;
             border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-            margin-bottom: 24px;
+            padding: 32px 28px;
+            box-shadow: 0 10px 40px rgba(0, 27, 60, 0.06);
+            transition: transform 0.3s ease;
         }
 
-        .calendly-title {
-            font-size: 1.25rem;
+        .service-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .service-card h3 {
+            font-size: 1rem;
             font-weight: 700;
-            color: #1e293b;
-            text-align: center;
-            margin-bottom: 24px;
+            color: #4A90D9;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: #414752;
+            line-height: 1.7;
+        }
+
+        /* ===========================
+           BOOK
+        =========================== */
+        .book {
+            background: white;
+            padding: 96px 32px;
+        }
+
+        .book-header {
+            max-width: 1100px;
+            margin: 0 auto 48px;
+        }
+
+        .book-header h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #1a1c1c;
+            margin-bottom: 20px;
+        }
+
+        .book-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .book-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #EBF4FF;
+            color: #4A90D9;
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 999px;
+        }
+
+        .book-widget {
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         .calendly-inline-widget {
             min-width: 280px;
             height: 700px;
-            border-radius: 8px;
+            border-radius: 16px;
             overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 27, 60, 0.06);
         }
 
-        /* Services Section */
-        .services-card {
-            background: white;
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-            margin-bottom: 24px;
+        /* ===========================
+           CONTACT
+        =========================== */
+        .contact {
+            background: #f3f3f4;
+            padding: 96px 32px;
         }
 
-        .services-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #1e293b;
-            text-align: center;
-            margin-bottom: 24px;
+        .contact-inner {
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        .service-item {
-            padding: 16px 0;
-            border-bottom: 1px solid #e2e8f0;
+        .contact-inner h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #1a1c1c;
+            margin-bottom: 48px;
         }
 
-        .service-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .service-item:first-child {
-            padding-top: 0;
-        }
-
-        .service-name {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #0D9488;
-            margin-bottom: 4px;
-        }
-
-        .service-description {
-            font-size: 0.9rem;
-            color: #64748b;
-            line-height: 1.5;
-        }
-
-        /* Contact Card */
-        .contact-card {
-            background: white;
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-            margin-bottom: 24px;
-        }
-
-        .contact-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #1e293b;
-            text-align: center;
-            margin-bottom: 24px;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
         }
 
         .contact-item {
             display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            padding: 16px 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .contact-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .contact-item:first-child {
-            padding-top: 0;
-        }
-
-        .contact-icon {
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
-            color: #4A90D9;
-        }
-
-        .contact-content {
-            flex: 1;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .contact-label {
-            font-size: 0.75rem;
-            font-weight: 600;
+            font-size: 0.72rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #64748b;
-            margin-bottom: 4px;
+            letter-spacing: 0.08em;
+            color: #414752;
         }
 
         .contact-value {
             font-size: 1rem;
             font-weight: 500;
-            color: #1e293b;
+            color: #1a1c1c;
+            line-height: 1.5;
         }
 
         .contact-value a {
-            color: #0D9488;
+            color: #4A90D9;
             text-decoration: none;
-            transition: color 0.2s ease;
+            transition: color 0.2s;
         }
 
         .contact-value a:hover {
             color: #4A90D9;
-            text-decoration: underline;
         }
 
-        /* Map Section */
-        .map-card {
-            background: white;
-            border-radius: 16px;
+        /* ===========================
+           CTA BANNER
+        =========================== */
+        .cta-banner {
+            padding: 64px 32px 96px;
+            background: #f3f3f4;
+        }
+
+        .cta-card {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #2B6CB0 0%, #4A90D9 100%);
+            border-radius: 24px;
+            padding: 80px 64px;
+            text-align: center;
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 27, 60, 0.15);
+        }
+
+        .cta-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-card h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .cta-card p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.82);
+            max-width: 480px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .btn-white {
+            display: inline-block;
+            font-family: 'Lexend', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #2B6CB0;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0, 27, 60, 0.12);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-white:hover {
+            transform: scale(1.04);
+            box-shadow: 0 16px 48px rgba(0, 27, 60, 0.2);
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .orb-1 { width: 320px; height: 320px; top: -80px; left: -80px; }
+        .orb-2 { width: 320px; height: 320px; bottom: -80px; right: -80px; }
+
+        /* ===========================
+           MAP
+        =========================== */
+        .map-section {
+            background: white;
         }
 
         .map-container {
             position: relative;
             width: 100%;
-            height: 0;
-            padding-bottom: 75%;
+            height: 400px;
         }
 
         .map-container iframe {
@@ -328,204 +692,363 @@
             width: 100%;
             height: 100%;
             border: 0;
+            display: block;
         }
 
-        /* Footer */
+        /* ===========================
+           FOOTER
+        =========================== */
         .footer {
-            text-align: center;
-            margin-top: 32px;
-            padding-top: 24px;
-            color: #64748b;
-            font-size: 0.875rem;
+            background: #f9f9f9;
+            border-top: 1px solid rgba(0, 27, 60, 0.08);
+            padding: 64px 32px 0;
         }
 
-        /* Responsive */
-        @media (max-width: 480px) {
-            .container {
-                padding: 24px 16px;
-            }
-
-            .logo {
-                max-width: 300px;
-            }
-
-            .tagline {
-                font-size: 1.1rem;
-            }
-
-            .contact-card {
-                padding: 24px;
-            }
-
-            .contact-item {
-                gap: 12px;
-            }
+        .footer-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 48px;
         }
 
-        /* SVG Icons */
-        .icon-phone {
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
+        .footer-logo {
+            height: 36px;
+            width: auto;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .footer-tagline {
+            font-size: 0.9rem;
+            color: #414752;
+            line-height: 1.7;
+            max-width: 280px;
+        }
+
+        .footer-col h4 {
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #1a1c1c;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-col ul li a {
+            font-size: 0.9rem;
+            color: #414752;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #4A90D9;
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(0, 27, 60, 0.08);
+            padding: 24px 0;
+        }
+
+        .footer-bottom p {
+            font-size: 0.85rem;
+            color: #414752;
+        }
+
+        /* ===========================
+           RESPONSIVE
+        =========================== */
+        @media (max-width: 900px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .hero-headline { font-size: 2.75rem; }
+            .hero-blob { display: none; }
+
+            .hero-image-wrap {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .benefits-grid { grid-template-columns: 1fr; }
+
+            .about-inner {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .about-image-wrap::before { display: none; }
+
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+
+            .cta-card { padding: 56px 32px; }
+            .cta-card h2 { font-size: 2.25rem; }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links a:not(.nav-book) { display: none; }
+
+            .hero { padding: 60px 24px 80px; }
+            .hero-headline { font-size: 2.25rem; }
+            .hero-buttons { flex-direction: column; }
+            .btn-primary, .btn-secondary { text-align: center; }
+
+            .benefits, .about, .services, .book, .contact, .cta-banner {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <img src="thrive-in-motion-high-resolution-color-logo.png" alt="Thrive in Motion Logo" class="logo">
-            <p class="tagline">Get Back to What You Love</p>
-        </header>
 
-        <!-- About Me -->
-        <section class="about-card">
-            <img src="philip-hsu.jpg" alt="Philip Hsu, Physical Therapist" class="headshot">
-            <h2 class="about-name">Philip Hsu, PT, DPT</h2>
-            <p class="about-title">Doctor of Physical Therapy</p>
-            <p class="about-bio">
-                As an avid pickleball player, marathon runner, and weightlifter, I know what it takes to stay active—and how frustrating it is when injury gets in the way. I've spent my career helping people move better and get back to doing what they love. Let me help you do the same—with focused, one-on-one sessions.
-            </p>
-            <div style="position: relative; display: inline-block;">
-                <button class="cta-button" onclick="toggleDropdown(event)">Get in Touch</button>
-                <div class="cta-dropdown" id="ctaDropdown">
-                    <a href="tel:917-232-2326" class="cta-option">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <img src="thrive-in-motion-high-resolution-logo-color-on-transparent-background.png" alt="Thrive in Motion" class="nav-logo">
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#book" class="nav-book">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero">
+            <svg class="hero-blob" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <path d="M44.7,-76.4C58.3,-69.2,70,-57.9,78.7,-44.7C87.4,-31.5,93.1,-16.3,92.8,-1.1C92.5,14.2,86.2,29.4,76.8,42.4C67.4,55.4,54.9,66.2,40.7,73.1C26.5,80,10.6,83,-4.8,80.7C-20.1,78.5,-34.9,71,-48.1,61.1C-61.2,51.2,-72.6,38.8,-79.1,24.3C-85.5,9.8,-87,-6.7,-82.9,-21.5C-78.8,-36.3,-69.1,-49.4,-56.3,-56.8C-43.5,-64.2,-27.6,-66,-11.9,-70.5C3.8,-75,44.7,-76.4,44.7,-76.4Z" fill="#7DD3EA" transform="translate(200 200)"/>
+            </svg>
+            <div class="hero-inner">
+                <div>
+                    <span class="hero-kicker">Performance Redefined</span>
+                    <h1 class="hero-headline">Physical Therapy That Works For You</h1>
+                    <p class="hero-sub">Skip the endless appointments. Get a clear diagnosis, an actionable recovery plan, and your life back.</p>
+                    <div class="hero-buttons">
+                        <a href="#book" class="btn-primary">Book an Appointment</a>
+                        <a href="#services" class="btn-secondary">View Our Services</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrap">
+                    <img src="philip-hsu.jpg" alt="Philip Hsu, PT, DPT" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits -->
+        <section class="benefits">
+            <div class="benefits-header">
+                <span class="kicker">Why Thrive in Motion</span>
+                <h2>Science-backed recovery, designed for you.</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon benefit-icon-blue">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
                         </svg>
-                        Call
-                    </a>
-                    <a href="sms:917-232-2326" class="cta-option">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </div>
+                    <h3>Clear Diagnosis</h3>
+                    <p>We find the root cause of your pain, not just treat the symptoms. Know exactly what's going on and why.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon benefit-icon-teal">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/>
                         </svg>
-                        Text
-                    </a>
-                    <a href="mailto:philiphsu.pt@gmail.com" class="cta-option">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="4" width="20" height="16" rx="2"/>
-                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </div>
+                    <h3>Actionable Recovery</h3>
+                    <p>A clear, actionable plan you can start immediately — no vague instructions, no guesswork.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon benefit-icon-cyan">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
                         </svg>
-                        Email
-                    </a>
+                    </div>
+                    <h3>One-on-One Care</h3>
+                    <p>Focused, personalized sessions with a Doctor of Physical Therapy — no waiting rooms, no assembly lines.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="about">
+            <div class="about-inner">
+                <div class="about-image-wrap">
+                    <img src="philip-hsu.jpg" alt="Philip Hsu, PT, DPT" class="about-img">
+                </div>
+                <div class="about-content">
+                    <span class="kicker">About Philip</span>
+                    <h2>Movement is the most powerful medicine we have.</h2>
+                    <p class="about-bio">As an avid pickleball player, marathon runner, and weightlifter, I know what it takes to stay active — and how frustrating it is when injury gets in the way. I've spent my career helping people move better and get back to doing what they love. Let me help you do the same — with focused, one-on-one sessions.</p>
+                    <ul class="checklist">
+                        <li>
+                            <svg class="checklist-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            Specialized sports injury rehabilitation
+                        </li>
+                        <li>
+                            <svg class="checklist-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            Post-surgical recovery protocols
+                        </li>
+                        <li>
+                            <svg class="checklist-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            Strength, conditioning &amp; chronic pain management
+                        </li>
+                    </ul>
+                    <div style="position: relative; display: inline-block;">
+                        <button class="btn-primary" onclick="toggleDropdown(event)" style="border: none; cursor: pointer;">Get in Touch</button>
+                        <div class="cta-dropdown" id="ctaDropdown">
+                            <a href="tel:917-232-2326" class="cta-option">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:#4A90D9;flex-shrink:0">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                Call
+                            </a>
+                            <a href="sms:917-232-2326" class="cta-option">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:#4A90D9;flex-shrink:0">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                </svg>
+                                Text
+                            </a>
+                            <a href="mailto:philiphsu.pt@gmail.com" class="cta-option">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:#4A90D9;flex-shrink:0">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                                Email
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Services -->
-        <section class="services-card">
-            <h2 class="services-title">Services</h2>
-
-            <div class="service-item">
-                <h3 class="service-name">Manual Therapy</h3>
-                <p class="service-description">Hands-on techniques including joint mobilization, soft tissue mobilization, and targeted stretching to reduce pain, improve mobility, and restore function.</p>
+        <section id="services" class="services">
+            <div class="services-header">
+                <span class="kicker">What We Treat</span>
+                <h2>Services</h2>
             </div>
-
-            <div class="service-item">
-                <h3 class="service-name">Sports Rehabilitation</h3>
-                <p class="service-description">Sport-specific recovery programs designed to get athletes back in the game safely, addressing the unique demands of your activity.</p>
-            </div>
-
-            <div class="service-item">
-                <h3 class="service-name">Strength & Conditioning</h3>
-                <p class="service-description">Personalized exercise programs to build strength, improve performance, and prevent future injuries through progressive training.</p>
-            </div>
-
-            <div class="service-item">
-                <h3 class="service-name">Post-Surgical Rehabilitation</h3>
-                <p class="service-description">Structured recovery programs following orthopedic surgeries to restore range of motion, rebuild strength, and return to daily activities.</p>
-            </div>
-
-            <div class="service-item">
-                <h3 class="service-name">Balance & Fall Prevention</h3>
-                <p class="service-description">Assessment and training to improve stability, coordination, and confidence in movement, reducing the risk of falls and injury.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Manual Therapy</h3>
+                    <p>Hands-on techniques including joint mobilization, soft tissue mobilization, and targeted stretching to reduce pain, improve mobility, and restore function.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Sports Rehabilitation</h3>
+                    <p>Sport-specific recovery programs designed to get athletes back in the game safely, addressing the unique demands of your activity.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Strength &amp; Conditioning</h3>
+                    <p>Personalized exercise programs to build strength, improve performance, and prevent future injuries through progressive training.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Post-Surgical Rehabilitation</h3>
+                    <p>Structured recovery programs following orthopedic surgeries to restore range of motion, rebuild strength, and return to daily activities.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Balance &amp; Fall Prevention</h3>
+                    <p>Assessment and training to improve stability, coordination, and confidence in movement, reducing the risk of falls and injury.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Remote PT Support</h3>
+                    <p>Get ongoing guidance and program adjustments without coming in. Stay connected with your PT through regular check-ins and app-based exercise delivery.</p>
+                </div>
             </div>
         </section>
 
-        <!-- Book an Appointment -->
-        <section class="calendly-card">
-            <h2 class="calendly-title">Book an Appointment</h2>
-            <div class="calendly-inline-widget" data-url="https://calendly.com/philiphsu-pt/30min"></div>
+        <!-- Book -->
+        <section id="book" class="book">
+            <div class="book-header">
+                <span class="kicker">Get Started</span>
+                <h2>Book an Appointment</h2>
+                <div class="book-chips">
+                    <span class="book-chip">📅 Saturday 9AM–1PM</span>
+                    <span class="book-chip">📆 Weekday sessions by appointment only</span>
+                </div>
+            </div>
+            <div class="book-widget">
+                <div class="calendly-inline-widget" data-url="https://calendly.com/philiphsu-pt/30min"></div>
+            </div>
         </section>
 
-        <!-- Contact Information -->
-        <section class="contact-card">
-            <h2 class="contact-title">Contact</h2>
-            <!-- Phone -->
-            <div class="contact-item">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                <div class="contact-content">
-                    <div class="contact-label">Phone</div>
-                    <div class="contact-value">
-                        <a href="tel:917-232-2326">917-232-2326</a>
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <div class="contact-inner">
+                <span class="kicker">Reach Out</span>
+                <h2>Contact</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span class="contact-label">Phone</span>
+                        <div class="contact-value"><a href="tel:917-232-2326">917-232-2326</a></div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Email -->
-            <div class="contact-item">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="4" width="20" height="16" rx="2"/>
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                </svg>
-                <div class="contact-content">
-                    <div class="contact-label">Email</div>
-                    <div class="contact-value">
-                        <a href="mailto:philiphsu.pt@gmail.com">philiphsu.pt@gmail.com</a>
+                    <div class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <div class="contact-value"><a href="mailto:philiphsu.pt@gmail.com">philiphsu.pt@gmail.com</a></div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Address -->
-            <div class="contact-item">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                    <circle cx="12" cy="10" r="3"/>
-                </svg>
-                <div class="contact-content">
-                    <div class="contact-label">Location</div>
-                    <div class="contact-value">
-                        <a href="https://maps.google.com/?q=1886+W+San+Carlos+St,+San+Jose,+CA+95128" target="_blank" rel="noopener">
-                            Brick House Fitness<br>1886 W San Carlos St<br>San Jose, CA 95128
-                        </a>
+                    <div class="contact-item">
+                        <span class="contact-label">Location</span>
+                        <div class="contact-value">
+                            <a href="https://maps.google.com/?q=1886+W+San+Carlos+St,+San+Jose,+CA+95128" target="_blank" rel="noopener noreferrer">
+                                Brick House Fitness<br>1886 W San Carlos St<br>San Jose, CA 95128
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Hours -->
-            <div class="contact-item">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"/>
-                    <polyline points="12 6 12 12 16 14"/>
-                </svg>
-                <div class="contact-content">
-                    <div class="contact-label">Hours</div>
-                    <div class="contact-value">Saturdays 9am–1pm<br>By appointment only</div>
-                </div>
-            </div>
-
-            <!-- Instagram -->
-            <div class="contact-item">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                </svg>
-                <div class="contact-content">
-                    <div class="contact-label">Instagram</div>
-                    <div class="contact-value">
-                        <a href="https://instagram.com/phillyphysio" target="_blank" rel="noopener">@phillyphysio</a>
+                    <div class="contact-item">
+                        <span class="contact-label">Hours</span>
+                        <div class="contact-value">Saturday 9AM–1PM<br>Weekday appointments available by appointment only</div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Instagram</span>
+                        <div class="contact-value"><a href="https://instagram.com/phillyphysio" target="_blank" rel="noopener noreferrer">@phillyphysio</a></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Google Map -->
-        <section class="map-card">
+        <!-- CTA Banner -->
+        <section class="cta-banner">
+            <div class="cta-card">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="cta-card-content">
+                    <h2>Ready to reclaim your movement?</h2>
+                    <p>Stop guessing, start healing. One session to get diagnosed, get a plan, and get your life back.</p>
+                    <a href="#book" class="btn-white">Book an Appointment</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <section class="map-section">
             <div class="map-container">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.1!2d-121.928137!3d37.3232191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcb570a991645%3A0x4a2e1b858c63b4d3!2sBrick%20House%20Fitness!5e0!3m2!1sen!2sus!4v1"
@@ -536,26 +1059,53 @@
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2025 Thrive in Motion. All rights reserved.</p>
-        </footer>
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <img src="thrive-in-motion-high-resolution-logo-color-on-transparent-background.png" alt="Thrive in Motion" class="footer-logo">
+                <p class="footer-tagline">One-on-one physical therapy in San Jose, CA. Get diagnosed, get a plan, and get back to what you love.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Manual Therapy</a></li>
+                    <li><a href="#services">Sports Rehabilitation</a></li>
+                    <li><a href="#services">Strength &amp; Conditioning</a></li>
+                    <li><a href="#services">Post-Surgical Rehab</a></li>
+                    <li><a href="#services">Balance &amp; Fall Prevention</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://instagram.com/phillyphysio" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="tel:917-232-2326">917-232-2326</a></li>
+                    <li><a href="mailto:philiphsu.pt@gmail.com">philiphsu.pt@gmail.com</a></li>
+                    <li><a href="#book">Book an Appointment</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Thrive in Motion. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <script>
         function toggleDropdown(e) {
             e.stopPropagation();
-            var dropdown = document.getElementById('ctaDropdown');
-            dropdown.classList.toggle('show');
+            document.getElementById('ctaDropdown').classList.toggle('show');
         }
-
         document.addEventListener('click', function(e) {
             var dropdown = document.getElementById('ctaDropdown');
-            if (!dropdown.contains(e.target)) {
+            if (dropdown && !dropdown.contains(e.target)) {
                 dropdown.classList.remove('show');
             }
         });
     </script>
+
 </body>
 </html>
