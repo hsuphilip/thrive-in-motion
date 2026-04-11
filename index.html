@@ -756,6 +756,48 @@
         .orb-2 { width: 320px; height: 320px; bottom: -80px; right: -80px; }
 
         /* ===========================
+           THE SPACE
+        =========================== */
+        .space-section {
+            padding: 80px 32px;
+            background: #f9f9f9;
+        }
+        .space-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .space-inner h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .space-sub {
+            color: #555;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        .space-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+        .space-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        @media (max-width: 768px) {
+            .space-grid {
+                grid-template-columns: 1fr;
+            }
+            .space-img {
+                height: 260px;
+            }
+        }
+
+        /* ===========================
            MAP
         =========================== */
         .map-section {
@@ -1299,7 +1341,7 @@
                     <p class="hero-sub">Skip the endless appointments. Get a clear diagnosis, an actionable recovery plan, and your life back.</p>
                     <div class="hero-buttons">
                         <a href="#book" class="btn-primary">Book an Appointment</a>
-                        <a href="#services" class="btn-secondary">View Our Services</a>
+                        <a href="sms:408-940-5856?body=Hi%20Philip%2C%20I%27m%20interested%20in%20a%20free%2015-minute%20consultation%20call." class="btn-secondary">Free 15-Min Consult</a>
                     </div>
                 </div>
                 <div class="hero-image-wrap">
@@ -1378,13 +1420,13 @@
                     <div style="position: relative; display: inline-block;">
                         <button class="btn-primary" onclick="toggleDropdown(event)" style="border: none; cursor: pointer;">Get in Touch</button>
                         <div class="cta-dropdown" id="ctaDropdown">
-                            <a href="tel:917-232-2326" class="cta-option">
+                            <a href="tel:408-940-5856" class="cta-option">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:#4A90D9;flex-shrink:0">
                                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                                 </svg>
                                 Call
                             </a>
-                            <a href="sms:917-232-2326" class="cta-option">
+                            <a href="sms:408-940-5856" class="cta-option">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:#4A90D9;flex-shrink:0">
                                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                                 </svg>
@@ -1398,6 +1440,20 @@
                             </a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Space -->
+        <section class="space-section">
+            <div class="space-inner">
+                <span class="kicker">The Space</span>
+                <h2>Where you'll train</h2>
+                <p class="space-sub">Sessions take place at Brick House Fitness in San Jose — a fully equipped, private-feel facility built for serious training.</p>
+                <div class="space-grid">
+                    <img src="IMG_9634.jpg" alt="Brick House Fitness open floor" class="space-img">
+                    <img src="IMG_9639.jpeg" alt="Brick House Fitness cardio zone" class="space-img">
+                    <img src="IMG_9641.jpeg" alt="Brick House Fitness equipment wall" class="space-img">
                 </div>
             </div>
         </section>
@@ -1432,40 +1488,6 @@
                 <div class="service-card">
                     <h3>Remote PT Support</h3>
                     <p>Get ongoing guidance and program adjustments without coming in. Stay connected with your PT through regular check-ins and app-based exercise delivery.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing -->
-        <section id="pricing" class="pricing">
-            <div class="pricing-header">
-                <span class="kicker">Investment</span>
-                <h2>Simple, Transparent Pricing</h2>
-                <p>No surprise bills. No insurance hoops. Know exactly what you're paying for — and why it's worth it.</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-label">Most Popular</div>
-                    <h3>Full Evaluation</h3>
-                    <div class="pricing-price">$150</div>
-                    <p class="pricing-desc">A comprehensive head-to-toe assessment to find the root cause of your pain or limitation — plus 6 weeks of ongoing support to guide your recovery.</p>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-label">Best Value</div>
-                    <h3>3-Session Package</h3>
-                    <div class="pricing-price">$400</div>
-                    <p class="pricing-desc">Three focused sessions strategically spread across 6 weeks. Ideal for progressing through a structured recovery plan with built-in check-ins.</p>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-label">Add-On</div>
-                    <h3>Additional Visits</h3>
-                    <div class="pricing-price">$150<span>/visit</span></div>
-                    <p class="pricing-desc">Need more hands-on time? Add individual sessions at any point in your care plan. No commitment required.</p>
-                </div>
-                <div class="pricing-card custom" style="grid-column: 1 / -1; max-width: 340px; margin: 0 auto; width: 100%; padding: 24px 28px;">
-                    <div class="pricing-label">Tailored</div>
-                    <h3 style="font-size: 1rem; margin-bottom: 8px;">Custom Plan</h3>
-                    <p class="pricing-desc" style="font-size: 0.88rem; margin-bottom: 16px;">Unique situation? <a href="#contact" style="color: #4A90D9; text-decoration: none; font-weight: 600;">Reach out</a> and we'll figure it out together.</p>
                 </div>
             </div>
         </section>
@@ -1539,6 +1561,60 @@
             </div>
         </section>
 
+        <!-- Pricing -->
+        <section id="pricing" class="pricing">
+            <div class="pricing-header">
+                <span class="kicker">Investment</span>
+                <h2>Simple, Transparent Pricing</h2>
+                <p>No surprise bills. No insurance hoops. Know exactly what you're paying for — and why it's worth it.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-label">Most Popular</div>
+                    <h3>Full Evaluation</h3>
+                    <div class="pricing-price">$150</div>
+                    <p class="pricing-desc">A comprehensive head-to-toe assessment to find the root cause of your pain or limitation — plus 6 weeks of ongoing support to guide your recovery.</p>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-label">Best Value</div>
+                    <h3>3-Session Package</h3>
+                    <div class="pricing-price">$400</div>
+                    <p class="pricing-desc">Three focused sessions strategically spread across 6 weeks. Ideal for progressing through a structured recovery plan with built-in check-ins.</p>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-label">Add-On</div>
+                    <h3>Additional Visits</h3>
+                    <div class="pricing-price">$150<span>/visit</span></div>
+                    <p class="pricing-desc">Need more hands-on time? Add individual sessions at any point in your care plan. No commitment required.</p>
+                </div>
+                <div class="pricing-card custom" style="grid-column: 1 / -1; max-width: 340px; margin: 0 auto; width: 100%; padding: 24px 28px;">
+                    <div class="pricing-label">Tailored</div>
+                    <h3 style="font-size: 1rem; margin-bottom: 8px;">Custom Plan</h3>
+                    <p class="pricing-desc" style="font-size: 0.88rem; margin-bottom: 16px;">Unique situation? <a href="#contact" style="color: #4A90D9; text-decoration: none; font-weight: 600;">Reach out</a> and we'll figure it out together.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial -->
+        <section class="testimonial">
+            <div class="testimonial-inner">
+                <span class="kicker">Patient Stories</span>
+                <div class="testimonial-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="testimonial-quote">"Phil gave me some exercises to help me recover from my bottom two disc herniations. He really knows his stuff — the exercises helped me experience relief from the pain, and also allowed me to get back in the gym pain free. I continue to do them to this day since they helped so much. Phil is the best!"</p>
+                <div class="testimonial-author">Daniel P.</div>
+                <a href="https://www.google.com/search?q=thrive+in+motion+pt#lrd=0x808fcb4c202dfae1:0x9a9ad485729e1ec,1,,,," target="_blank" rel="noopener noreferrer" class="testimonial-google-link">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    View on Google
+                </a>
+            </div>
+        </section>
+
         <!-- FAQ -->
         <section id="faq" class="faq">
             <div class="faq-header">
@@ -1604,26 +1680,6 @@
             </div>
         </section>
 
-        <!-- Testimonial -->
-        <section class="testimonial">
-            <div class="testimonial-inner">
-                <span class="kicker">Patient Stories</span>
-                <div class="testimonial-stars">
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                </div>
-                <p class="testimonial-quote">"Phil gave me some exercises to help me recover from my bottom two disc herniations. He really knows his stuff — the exercises helped me experience relief from the pain, and also allowed me to get back in the gym pain free. I continue to do them to this day since they helped so much. Phil is the best!"</p>
-                <div class="testimonial-author">Daniel P.</div>
-                <a href="https://www.google.com/search?q=thrive+in+motion+pt#lrd=0x808fcb4c202dfae1:0x9a9ad485729e1ec,1,,,," target="_blank" rel="noopener noreferrer" class="testimonial-google-link">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                    View on Google
-                </a>
-            </div>
-        </section>
-
         <!-- Book -->
         <section id="book" class="book">
             <div class="book-header">
@@ -1639,6 +1695,19 @@
             </div>
         </section>
 
+        <!-- CTA Banner -->
+        <section class="cta-banner">
+            <div class="cta-card">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="cta-card-content">
+                    <h2>Ready to reclaim your movement?</h2>
+                    <p>Stop guessing, start healing. One session to get diagnosed, get a plan, and get your life back.</p>
+                    <a href="#book" class="btn-white">Book an Appointment</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact -->
         <section id="contact" class="contact">
             <div class="contact-inner">
@@ -1647,7 +1716,7 @@
                 <div class="contact-grid">
                     <div class="contact-item">
                         <span class="contact-label">Phone</span>
-                        <div class="contact-value"><a href="tel:917-232-2326">917-232-2326</a></div>
+                        <div class="contact-value"><a href="tel:408-940-5856">408-940-5856</a></div>
                     </div>
                     <div class="contact-item">
                         <span class="contact-label">Email</span>
@@ -1669,19 +1738,6 @@
                         <span class="contact-label">Instagram</span>
                         <div class="contact-value"><a href="https://instagram.com/phillyphysio" target="_blank" rel="noopener noreferrer">@phillyphysio</a></div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Banner -->
-        <section class="cta-banner">
-            <div class="cta-card">
-                <div class="orb orb-1"></div>
-                <div class="orb orb-2"></div>
-                <div class="cta-card-content">
-                    <h2>Ready to reclaim your movement?</h2>
-                    <p>Stop guessing, start healing. One session to get diagnosed, get a plan, and get your life back.</p>
-                    <a href="#book" class="btn-white">Book an Appointment</a>
                 </div>
             </div>
         </section>
@@ -1730,7 +1786,7 @@
                 <h4>Connect</h4>
                 <ul>
                     <li><a href="https://instagram.com/phillyphysio" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                    <li><a href="tel:917-232-2326">917-232-2326</a></li>
+                    <li><a href="tel:408-940-5856">408-940-5856</a></li>
                     <li><a href="mailto:philiphsu.pt@gmail.com">philiphsu.pt@gmail.com</a></li>
                 </ul>
             </div>
