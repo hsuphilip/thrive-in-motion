@@ -4,7 +4,7 @@
 
 - **Business Name:** Thrive in Motion
 - **Tagline:** [e.g., "Be More Capable"]
-- **Phone:** [917-232-2326]
+- **Phone:** [408-940-5856]
 - **Email:** [philiphsu.pt@gmail.com]
 - **Address:** [1886 W San Carlos St, San Jose, CA 95128]
 - **Hours:** [e.g., Saturday 9am-1pm]

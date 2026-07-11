@@ -61,6 +61,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
     <style>
         /* ===========================
            RESET & BASE
@@ -1054,6 +1056,8 @@
 
             .services-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
+
+            .calendly-inline-widget { height: 1000px; }
         }
 
         /* ===========================
@@ -1367,7 +1371,7 @@
                 <a href="#contact">Contact</a>
                 <a href="#book" class="nav-book">Book Now</a>
             </div>
-            <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+            <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -1397,7 +1401,29 @@
                     <p class="hero-sub">Skip the endless appointments. Get a clear diagnosis, an actionable recovery plan, and your life back.</p>
                     <div class="hero-buttons">
                         <a href="#book" class="btn-primary">Book an Appointment</a>
-                        <a href="sms:408-940-5856?body=Hi%20Philip%2C%20I%27m%20interested%20in%20a%20free%2015-minute%20consultation%20call." class="btn-secondary">Free 15-Min Consult</a>
+                        <div style="position: relative; display: inline-block;">
+                            <button class="btn-secondary" onclick="toggleDropdown(event, 'heroDropdown')" aria-haspopup="true" aria-expanded="false" style="border: none; cursor: pointer; width: 100%;">Free 15-Min Consult</button>
+                            <div class="cta-dropdown" id="heroDropdown">
+                                <a href="tel:408-940-5856" class="cta-option">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:#4A90D9;flex-shrink:0">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                    Call
+                                </a>
+                                <a href="sms:408-940-5856?body=Hi%20Philip%2C%20I%27m%20interested%20in%20a%20free%2015-minute%20consultation%20call." class="cta-option">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:#4A90D9;flex-shrink:0">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                    </svg>
+                                    Text
+                                </a>
+                                <a href="mailto:philiphsu.pt@gmail.com?subject=Free%2015-Minute%20Consultation" class="cta-option">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:#4A90D9;flex-shrink:0">
+                                        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                    </svg>
+                                    Email
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="hero-image-wrap">
@@ -1474,7 +1500,7 @@
                         </li>
                     </ul>
                     <div style="position: relative; display: inline-block;">
-                        <button class="btn-primary" onclick="toggleDropdown(event)" style="border: none; cursor: pointer;">Get in Touch</button>
+                        <button class="btn-primary" onclick="toggleDropdown(event, 'ctaDropdown')" aria-haspopup="true" aria-expanded="false" style="border: none; cursor: pointer;">Get in Touch</button>
                         <div class="cta-dropdown" id="ctaDropdown">
                             <a href="tel:408-940-5856" class="cta-option">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:#4A90D9;flex-shrink:0">
@@ -1680,7 +1706,7 @@
             </div>
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button class="faq-question" aria-expanded="false">
                         Do you accept insurance?
                         <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                     </button>
@@ -1689,7 +1715,7 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button class="faq-question" aria-expanded="false">
                         How is this different from a hospital or clinic PT?
                         <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                     </button>
@@ -1698,7 +1724,7 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button class="faq-question" aria-expanded="false">
                         How many sessions will I need?
                         <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                     </button>
@@ -1707,7 +1733,7 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button class="faq-question" aria-expanded="false">
                         What should I bring to my first visit?
                         <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                     </button>
@@ -1716,7 +1742,7 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button class="faq-question" aria-expanded="false">
                         Do you offer remote sessions?
                         <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                     </button>
@@ -1725,7 +1751,7 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button class="faq-question" aria-expanded="false">
                         What if my situation is complicated?
                         <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                     </button>
@@ -1743,7 +1769,7 @@
                 <h2>Book an Appointment</h2>
                 <div class="book-chips">
                     <span class="book-chip">📅 Saturday 9AM–1PM</span>
-                    <span class="book-chip">📆 Weekday sessions by appointment only</span>
+                    <span class="book-chip">📆 Weekdays by appointment</span>
                 </div>
             </div>
             <div class="book-widget">
@@ -1788,7 +1814,7 @@
                     </div>
                     <div class="contact-item">
                         <span class="contact-label">Hours</span>
-                        <div class="contact-value">Saturday 9AM–1PM<br>Weekday appointments available by appointment only</div>
+                        <div class="contact-value">Saturday 9AM–1PM<br>Weekdays by appointment</div>
                     </div>
                     <div class="contact-item">
                         <span class="contact-label">Instagram</span>
@@ -1858,8 +1884,9 @@
         var mobileMenu = document.getElementById('navMobile');
 
         hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('open');
+            var isOpen = hamburger.classList.toggle('open');
             mobileMenu.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
         });
 
         document.querySelectorAll('.nav-mobile-link, .nav-book-mobile').forEach(function(link) {
@@ -1875,20 +1902,33 @@
                 var wasOpen = item.classList.contains('open');
                 document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
                     openItem.classList.remove('open');
+                    openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
                 });
-                if (!wasOpen) item.classList.add('open');
+                if (!wasOpen) {
+                    item.classList.add('open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
             });
         });
 
-        function toggleDropdown(e) {
+        function closeDropdown(dropdown) {
+            dropdown.classList.remove('show');
+            var btn = dropdown.parentElement.querySelector('button');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+        function toggleDropdown(e, id) {
             e.stopPropagation();
-            document.getElementById('ctaDropdown').classList.toggle('show');
+            document.querySelectorAll('.cta-dropdown.show').forEach(function(d) {
+                if (d.id !== id) closeDropdown(d);
+            });
+            var dropdown = document.getElementById(id);
+            var isOpen = dropdown.classList.toggle('show');
+            e.currentTarget.setAttribute('aria-expanded', isOpen);
         }
         document.addEventListener('click', function(e) {
-            var dropdown = document.getElementById('ctaDropdown');
-            if (dropdown && !dropdown.contains(e.target)) {
-                dropdown.classList.remove('show');
-            }
+            document.querySelectorAll('.cta-dropdown.show').forEach(function(d) {
+                if (!d.contains(e.target)) closeDropdown(d);
+            });
         });
     </script>
 
