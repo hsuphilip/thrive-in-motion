@@ -423,6 +423,12 @@
             margin-bottom: 40px;
         }
 
+        .hero-note {
+            margin-top: 16px;
+            font-size: 0.95rem;
+            color: #414752;
+        }
+
         .hero-buttons {
             display: flex;
             gap: 16px;
@@ -1542,7 +1548,7 @@
                     <div class="hero-buttons">
                         <a href="#book" class="btn-primary">Book an Appointment</a>
                         <div style="position: relative; display: inline-block;">
-                            <button class="btn-secondary" onclick="toggleDropdown(event, 'heroDropdown')" aria-haspopup="true" aria-expanded="false" style="border: none; cursor: pointer; width: 100%;">Free 15-Min Consult</button>
+                            <button class="btn-secondary" onclick="toggleDropdown(event, 'heroDropdown')" aria-haspopup="true" aria-expanded="false" style="border: none; cursor: pointer; width: 100%;">Contact Me</button>
                             <div class="cta-dropdown" id="heroDropdown">
                                 <a href="tel:408-940-5856" class="cta-option">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:#4A90D9;flex-shrink:0">
@@ -1565,6 +1571,7 @@
                             </div>
                         </div>
                     </div>
+                    <p class="hero-note">Not sure where to start? Reach out for a free 15-minute call.</p>
                 </div>
                 <div class="hero-image-wrap">
                     <img src="philip-hsu-web.jpg" alt="Philip Hsu, PT, DPT" class="hero-img" width="1000" height="1000" fetchpriority="high">
@@ -1640,7 +1647,7 @@
                         </li>
                     </ul>
                     <div style="position: relative; display: inline-block;">
-                        <button class="btn-primary" onclick="toggleDropdown(event, 'ctaDropdown')" aria-haspopup="true" aria-expanded="false" style="border: none; cursor: pointer;">Get in Touch</button>
+                        <button class="btn-primary" onclick="toggleDropdown(event, 'ctaDropdown')" aria-haspopup="true" aria-expanded="false" style="border: none; cursor: pointer;">Contact Me</button>
                         <div class="cta-dropdown" id="ctaDropdown">
                             <a href="tel:408-940-5856" class="cta-option">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;color:#4A90D9;flex-shrink:0">
@@ -1982,7 +1989,7 @@
                 <h2>Contact</h2>
                 <div class="contact-grid">
                     <div class="contact-item">
-                        <span class="contact-label">Phone</span>
+                        <span class="contact-label">Call or Text</span>
                         <div class="contact-value"><a href="tel:408-940-5856">408-940-5856</a></div>
                     </div>
                     <div class="contact-item">
@@ -2068,9 +2075,19 @@
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
         </svg>
-        Text Us
+        <span class="floating-text-label">Text Us</span>
     </a>
 
+    <script>
+        (function () {
+            var btn = document.querySelector('.floating-text-btn');
+            if (btn && window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+                btn.setAttribute('href', '#contact');
+                btn.setAttribute('aria-label', 'Contact');
+                btn.querySelector('.floating-text-label').textContent = 'Contact Me';
+            }
+        })();
+    </script>
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <script>
         var hamburger = document.getElementById('navHamburger');
