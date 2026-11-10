@@ -78,7 +78,7 @@
           "name": "How is this different from a hospital or clinic PT?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "At a typical insurance-based clinic, PTs often see 3–4 patients at the same time, with aides and technicians handling much of the hands-on work. Here, you get 1-on-1 time directly with a Doctor of Physical Therapy for the full session — plus a care plan shaped by your goals, not by what your insurance approves."
+            "text": "At many insurance-based clinics, a physical therapist may be treating 3–4 patients at once, with aides or technicians running much of your exercise time — so you might spend only 10–15 minutes of your visit with the actual PT. Here, your entire session is one-on-one with a Doctor of Physical Therapy. No aides, no hand-offs, no juggling. That means more hands-on care, a plan that adjusts every visit, and faster progress toward getting back to what you love."
           }
         },
         {
@@ -423,6 +423,28 @@
             margin-bottom: 40px;
         }
 
+        .hero-points {
+            list-style: none;
+            padding: 0;
+            margin: -16px 0 32px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+        }
+
+        .hero-points li {
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: #1a1c1c;
+        }
+
+        .hero-points li::before {
+            content: "✓";
+            color: #4A90D9;
+            font-weight: 800;
+            margin-right: 6px;
+        }
+
         .hero-note {
             margin-top: 16px;
             font-size: 0.95rem;
@@ -520,6 +542,7 @@
            ABOUT
         =========================== */
         .about {
+            border-top: 1px solid #e6e6e8;
             background: white;
             padding: 96px 32px;
         }
@@ -1157,6 +1180,7 @@
            PRICING
         =========================== */
         .pricing {
+            border-top: 1px solid #e6e6e8;
             background: #f3f3f4;
             padding: 96px 32px;
         }
@@ -1545,6 +1569,11 @@
                     <span class="hero-kicker">Performance Redefined</span>
                     <h1 class="hero-headline">Physical Therapy That Works For You</h1>
                     <p class="hero-sub">Skip the endless appointments. Get a clear diagnosis, an actionable recovery plan, and your life back — in-person or virtual.</p>
+                    <ul class="hero-points">
+                        <li>1-on-1 with a Doctor of Physical Therapy</li>
+                        <li>40–60 minute sessions</li>
+                        <li>No insurance or referral needed</li>
+                    </ul>
                     <div class="hero-buttons">
                         <a href="#book" class="btn-primary">Book an Appointment</a>
                         <div style="position: relative; display: inline-block;">
@@ -1613,6 +1642,75 @@
                     <h3>3. Get Moving</h3>
                     <p>Execute your plan with 1-on-1 sessions, digital check-ins, or both. Most people feel the difference within the first few visits.</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- Why Cash-Based -->
+        <section id="cash-based" class="cash-based">
+            <div class="cash-based-inner">
+                <div class="cash-based-header">
+                    <span class="kicker">Why Cash-Based?</span>
+                    <h2>Care that puts you first,<br>not your insurance company.</h2>
+                    <p>Thrive in Motion is a cash-based practice — and that's a deliberate choice. Here's what that means for you.</p>
+                </div>
+                <div class="cash-grid">
+                    <div class="cash-card">
+                        <div class="cash-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="cash-title">Undivided Attention</div>
+                            <p class="cash-desc">Every minute of your session is yours. No juggling multiple patients at once, no aides stepping in — just your PT, focused entirely on you.</p>
+                        </div>
+                    </div>
+                    <div class="cash-card">
+                        <div class="cash-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="cash-title">No Insurance Delays</div>
+                            <p class="cash-desc">Start treatment immediately. No waiting on prior authorizations, no denied visits, no arbitrary session limits set by a plan you didn't design.</p>
+                        </div>
+                    </div>
+                    <div class="cash-card">
+                        <div class="cash-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="cash-title">You Drive the Plan</div>
+                            <p class="cash-desc">Care decisions are made by your PT based on your body and your goals — not dictated by what your insurance is willing to cover this week.</p>
+                        </div>
+                    </div>
+                    <div class="cash-card">
+                        <div class="cash-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="cash-title">Longer, More Effective Sessions</div>
+                            <p class="cash-desc">Evaluations are a full 60 minutes, and follow-ups run 40–60 minutes — one-on-one the entire time. Enough time to actually address the problem, not just check a box.</p>
+                        </div>
+                    </div>
+                    <div class="cash-card">
+                        <div class="cash-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="cash-title">Transparent Pricing</div>
+                            <p class="cash-desc">Know exactly what you'll pay before you walk in. No surprise bills weeks later, no co-pay confusion.</p>
+                        </div>
+                    </div>
+                </div>
+                <blockquote class="cash-quote">"Insurance-based PT often means 15-minute slots with a PT split across 4 patients. That's not how you actually get better. You deserve your PT's full attention for the full session."</blockquote>
             </div>
         </section>
 
@@ -1718,75 +1816,6 @@
                     <h3>Remote PT Support</h3>
                     <p>Get ongoing guidance and program adjustments without coming in. Monthly video check-ins and weekly rehab program updates to keep you progressing from anywhere.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Why Cash-Based -->
-        <section id="cash-based" class="cash-based">
-            <div class="cash-based-inner">
-                <div class="cash-based-header">
-                    <span class="kicker">Why Cash-Based?</span>
-                    <h2>Care that puts you first,<br>not your insurance company.</h2>
-                    <p>Thrive in Motion is a cash-based practice — and that's a deliberate choice. Here's what that means for you.</p>
-                </div>
-                <div class="cash-grid">
-                    <div class="cash-card">
-                        <div class="cash-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="cash-title">Undivided Attention</div>
-                            <p class="cash-desc">Every minute of your session is yours. No juggling multiple patients at once, no aides stepping in — just your PT, focused entirely on you.</p>
-                        </div>
-                    </div>
-                    <div class="cash-card">
-                        <div class="cash-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="cash-title">No Insurance Delays</div>
-                            <p class="cash-desc">Start treatment immediately. No waiting on prior authorizations, no denied visits, no arbitrary session limits set by a plan you didn't design.</p>
-                        </div>
-                    </div>
-                    <div class="cash-card">
-                        <div class="cash-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="cash-title">You Drive the Plan</div>
-                            <p class="cash-desc">Care decisions are made by your PT based on your body and your goals — not dictated by what your insurance is willing to cover this week.</p>
-                        </div>
-                    </div>
-                    <div class="cash-card">
-                        <div class="cash-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="cash-title">Longer, More Effective Sessions</div>
-                            <p class="cash-desc">Enough time to actually address the problem — not just check a box. Real progress happens when we have the time to do the work properly.</p>
-                        </div>
-                    </div>
-                    <div class="cash-card">
-                        <div class="cash-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="cash-title">Transparent Pricing</div>
-                            <p class="cash-desc">Know exactly what you'll pay before you walk in. No surprise bills weeks later, no co-pay confusion.</p>
-                        </div>
-                    </div>
-                </div>
-                <blockquote class="cash-quote">"Insurance-based PT often means 15-minute slots with a PT split across 4 patients. That's not how you actually get better. You deserve your PT's full attention for the full session."</blockquote>
             </div>
         </section>
 
@@ -1903,7 +1932,7 @@
                         <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">At a typical insurance-based clinic, PTs often see 3–4 patients at the same time, with aides and technicians handling much of the hands-on work. Here, you get 1-on-1 time directly with a Doctor of Physical Therapy for the full session — plus a care plan shaped by your goals, not by what your insurance approves.</div>
+                        <div class="faq-answer-inner">At many insurance-based clinics, a physical therapist may be treating 3–4 patients at once, with aides or technicians running much of your exercise time — so you might spend only 10–15 minutes of your visit with the actual PT. Here, your entire session is one-on-one with a Doctor of Physical Therapy. No aides, no hand-offs, no juggling. That means more hands-on care, a plan that adjusts every visit, and faster progress toward getting back to what you love.</div>
                     </div>
                 </div>
                 <div class="faq-item">
